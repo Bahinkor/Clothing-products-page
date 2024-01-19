@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'tanha';
+    src: local('tanha', 'Tanha-FD'),
+    url('../fonts/Tanha-FD.woff2'),
+    format('woff2')
+}
+
+/* start project */
+
+body {
+    font-family: tanha;
+    outline: none;
+    background-image: linear-gradient(250deg, #B3E5FC,  #81D4FA);
+}
+
+.container {
+    max-width: 1300px;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+    gap: 2rem;
+}
+
+.grid-product {
+    width: 300px;
+    display: inline-block;
+}
+
+.grid-product__link {
+    text-decoration: none;
+    color: #000;
+}
+
+.grid-product__item {
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    padding: 12px 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-product__item:hover {
+    background-color: #31a9cc;
+    box-shadow: 0 8px 24px -1px #31a9cc;
+}
+
+.grid-product__img {
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.5s ease;
+    top: 0;
+    transform: scale(1.2);
+}
+
+.grid-product__img::after {
+    content: '';
+    position: absolute;
+    width: 43%;
+    height: 9%;
+    box-shadow: 0 123px 31px rgba(0, 0, 0, 0.6), 0 123px 31px rgba(0, 0, 0, 0.3);
+    left: 30%;
+    bottom: 112px;
+}
+
+.grid-product__item:hover .grid-product__img {
+    top: -40px;
+}
+
+.item__img {
+    width: 100%;
+}
+
+.grid-product__caption {
+    text-align: center;
+    color: #000;
+    transition: color 0.5s ease;
+}
+
+.grid-product__item:hover .grid-product__caption {
+    color: #fff;
+}
+
+.grid-product__title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.grid-product__text {
+    margin: 1rem 0;
+}
+
+.grid-product__price {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.grid-product__btn {
+    background-color: transparent;
+    border: 2px solid #feac00;
+    padding: 12px;
+    border-radius: 12px;
+    font-family: 'tanha';
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.grid-product__item:hover .grid-product__btn {
+    background-color: #feac00;
+    color: #fff;
+}
+
+/* responsive */
+
+@media screen and (max-width:1300px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .grid-product {
+        width: 290px;
+    }
+}
+
+@media screen and (max-width:1275px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        grid-template-columns: repeat(3 ,1fr);
+    }
+}
+
+@media screen and (max-width:950px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        grid-template-columns: repeat(2 ,1fr);
+    }
+}
+
+@media screen and (max-width:630px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        grid-template-columns: repeat(1 ,1fr);
+    }
+}
+
+@media screen and (max-width:310px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        grid-template-columns: repeat(1 ,1fr);
+    }
+    .grid-product {
+        width: 230px;
+    }
+}
